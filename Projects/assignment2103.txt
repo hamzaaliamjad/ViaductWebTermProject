@@ -1,0 +1,155 @@
+#I have done all the codes in C++.
+Problem 1:
+(if all the .h files are in same folder)
+First Compile all the cpp files and create rellocateable .o files.
+1. g++ *.cpp -c
+
+then link all the .o files and create
+2. g++ *.o -o myexe
+
+then run the exe file
+3. ./myexe
+
+
+(now lets move the .h files to some other location)
+mv ~/T1/*.h  ~/Downloads/
+
+==> Now to compile we have to use -I 
+
+g++ *.cpp -c -I  ~/Downloads/
+g++ *.o -o myexe
+./myexe
+
+
+(now lets copy the .h files to standard location)
+sudo cp ~/Downloads/*.h /usr/include
+ 
+==> then no need to give the path
+g++ *.cpp -c
+g++ *.o -o myexe
+./myexe
+
+
+(to get size of the myexe)
+ls -sh myexe
+==> it is 20Kb
+==> when we nm the myexe files it shows (T) with all the functions (our created) that means they are globaly defined in the text segment of myexe.
+
+
+Problem 2:
+==>First install make by:
+sudo apt install make
+
+==> now create Makefile
+touch Makefile
+gedit Makefile
+==>write
+myexe: driver.o mybitfunctions.o myfilefunctions.o mystrfunctions.o
+	g++ *.o -o exeBitFunctions
+driver.o: driver.cpp
+	g++ driver.cpp -c
+mybitfunctions.o: mybitfunctions.cpp
+	g++ mybitfunctions.cpp -c
+mystrfunctions.o: mystrfunctions.cpp
+	g++ mystrfunctions.cpp -c
+myfilefunctions.o: myfilefunctions.cpp
+	g++ myfilefunctions.cpp -c
+==>run Makefile
+make
+==>first output
+
+g++ driver.cpp -c
+g++ mybitfunctions.cpp -c
+g++ myfilefunctions.cpp -c
+g++ mystrfunctions.cpp -c
+g++ *.o -o myexe
+
+==>Second output(after changing driver.cpp)
+g++ driver.cpp -c
+g++ *.o -o myexe
+
+==>Third output after:
+rm mystrfunctions.o
+make
+Output:
+g++ mystrfunctions.cpp -c
+g++ *.o -o myexe
+
+==>Fourt ouput after:
+touch mybitfunctions.o
+make
+Ouput:
+g++ *.o -o myexe
+
+Problem 3:
+1. Make .o files (excluding driver)
+	g++ -c *.cpp
+2. Create .a files (Static Libraries) separately
+	ar -rs libmystrfunctions.a mystrfunctions.o
+
+	ar -rs libmybitfunctions.a mybitfunctions.o
+
+	ar -rs libmyfilefunctions.a myfilefunctions.o
+
+3. Now go to driver folder
+	cd driver/
+4. Create .o file of driver
+	g++ -c driver.cpp -I../
+	//-I../ is used to indicate that the header files are in previous folder.	
+
+5. Link Libraries and create exe file
+	 g++ --static driver.o -o myexe -lmystrfunctions -lmyfilefunctions -lmybitfunctions -L../
+	 -L../ is used to indicate that the library files are in previous folder.
+6. Run exe file
+	./myexe
+==> What if libraries are in same directory as of driver function?
+Then instead of -L../ we will use -L. this will indicate present directory as the directory to be searched for libraries.
+
+==> What if libraries are in standard directory as of driver function?
+Then first move libraries to /usr/lib,
+Then instead of -L../ we will use -L /usr/lib this will indicate standard directory as the directory to be searched for libraries.
+
+==> Size of myexe
+2.3Mb
+With nm command we can see that there is no U (undefinde object) in static linking,every object and utilities are linked before hand and thats why its size(2.3Mb) is way too large than the previous one(20Kb).
+Bonus:
+	instead of creating .a files separately we can create a single .a whie at step 2 doing this:
+	
+	ar -rs libmyfunctions.a *.o
+	
+	//As only required .o files are present in the folder.
+	rest of the process is same.
+	
+Problem 4:
+1. Make .o files(excluding driver)
+	g++ -c -fPIC *.cpp
+2. Create .so (Dynamic Libraries) files separately
+	g++ -shared mybitfunctions.o -o libmybitfunctions.so
+
+	g++ -shared myfilefunctions.o -o libmyfilefunctions.so
+
+	g++ -shared mystrfunctions.o -o libmystrfunctions.so
+
+3. Now go to driver folder
+	cd driver/
+4. Create .o file of driver
+	g++ -c driver.cpp -I../
+	//Reason explained
+5. Set Path variable
+	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/hamza/T4/
+	//Required to tell the linker where to find libraries at run time.
+6. Create exe file
+	 g++ driver.o -o myexe -lmystrfunctions -lmyfilefunctions -lmybitfunctions -L../
+7. Run exe
+	./myexe
+==> What if libraries are in same directory as of driver function?
+first set the PATH variable to pwd,
+Then instead of -L../ we will use -L. this will indicate present directory as the directory to be searched for libraries.
+
+==> What if libraries are in standard directory as of driver function?
+Then first move libraries to /usr/lib,
+Then instead of -L../ we will use -L /usr/lib this will indicate standard directory as the directory to be searched for libraries.
+
+==>Size of myexe
+20kb
+when we now nm myexe this time our functions has U (undefined) identifier instead of T(first case) or defined in second case, because libraries will be linked whenever the function being called and that's why size of myexe (20Kb) is way way less than staticaly linked myexe's size(2.3Mb).

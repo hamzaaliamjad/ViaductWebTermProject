@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Students Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/student_card_css.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom navbar-expand sticky-top ">
+        <div class="container-fluid">
+            <a class="navbar-brand viaduct-logo" href="#">Viaduct</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/feed">Feed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href='/studentcards'>Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="#">Companies</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-dark text-decoration-underline text-white" aria-current="page" href="#">Make
+                        your cards STANDOUT</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-10 mb-2 mb-lg-0">
+                <li class="nav-item imageProfile">
+                    <div class="col-xs-1">
+                        <a href='/studentView'><img class="img-responsive img-border rounded-circle" src="../static/mypic.jpeg"
+                                alt="Profile Picture" width="42" height="42"></a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="posts-div wf-section">
+        <div class="posts-container">
+            <div class="posts-grid">
+                {%for i in range (0,count)%}
+                  <div class="card" id={{ i }}>
+                    <div class="ds-top"></div>
+                    <div class="avatar-holder">
+                      <img src="../static/mypic.jpeg" alt="profile-pic">
+                    </div>
+                    <div class="name">
+                      <a href="#" target="_blank" id="name">Hamza Ali Amjad</a>
+                      <h6 title="Followers" id='followers-{{ i }}'><i class="fas fa-users"></i> <span class="followers" >90</span></h6>
+                    </div>
+                    <div class="button" >
+                      <a href="#" class="btn" id= 'followBtn-{{ i }}'  onmousedown="follow(this);" >Follow <i class="fas fa-user-plus"></i></a>
+                    </div>
+                    <div class="ds-info">
+                      <div class="ds pens">
+                        <h6 title="Number of projects created by the user">Projects<i class="fas fa-edit"></i></h6>
+                        <p id="no_of_projects">29</p>
+                      </div>
+                      <div class="ds projects">
+                        <h6 title="CGPA of the user">CGPA<i class="fas fa-project-diagram"></i></h6>
+                        <p id="CGPA">0</p>
+                      </div>
+                      <div class="ds posts">
+                        <h6 title="Number of skills">Skills <i class="fas fa-comments"></i></h6>
+                        <p id="no_of_skills">0</p>
+                      </div>
+                    </div>
+                    <div class="ds-skill">
+                      <h6>Skill <i class="fa fa-code" aria-hidden="true"></i></h6>
+                      <div class="skill html">
+                        <h6><i class="fab fa-html5"></i> HTML5 </h6>
+                        <div class="bar bar-html">
+                          <p>95%</p>
+                        </div>
+                      </div>
+                      <div class="skill css">
+                        <h6><i class="fab fa-css3-alt"></i> CSS3 </h6>
+                        <div class="bar bar-css">
+                          <p>90%</p>
+                        </div>
+                      </div>
+                      <div class="skill javascript">
+                        <h6><i class="fab fa-js"></i> JavaScript </h6>
+                        <div class="bar bar-js">
+                          <p>75%</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor%}
+            </div>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function (){
+            let i=0;
+            var allData={{ data|tojson }};
+            console.log(allData)
+            for(i ; i<{{ count }};i++){
+                $("#" +i+ " #name").text(allData[i][0]);
+                $("#" +i+ " #followers").text(allData[i][1]);
+                $("#" +i+ " #CGPA").text(allData[i][2]);
+                $("#" +i+ " #no_of_skills").text(allData[i][3]);
+                $("#" +i+ " #no_of_projects").text(allData[i][4]);
+            }
+        });
+    </script>
+{#    <script>#}
+        {#function follow(count){#}
+        {#    console.log("i am here")#}
+        {#     var ids=this.id;#}
+        {#    console.log(this)#}
+        {#     $("#ids").text(count+1);#}
+        {#    }#}
+{##}
+{#   function follow(event) {#}
+{#       // this.append wouldn't work#}
+{#       console.log(event.id)#}
+{#       var idString = event.id#}
+{#       var idVal = idString.split("-")#}
+{#       var followersId = "followers-" + idVal[1]#}
+{#       const temp = document.getElementById(followersId);#}
+{#       var followersCount= temp.innerText;#}
+{#       var newCount= parseInt(followersCount)+1#}
+{#       temp.innerText="" + newCount;#}
+{#       const thisId=document.getElementById(idString)#}
+{#       thisId.innerHTML = 'Following <i class="fas fa-user-times"></i>';#}
+{#           console.log(followersId)#}
+{#   }#}
+{##}
+{#    </script>#}
+
+<script>
+follow = (event) => {
+    var idString = event.id;
+    var idVal = idString.split("-");
+    const thisId = document.getElementById(idString);
+    var followersId = "followers-" + idVal[1];
+    const temp = document.getElementById(followersId);
+    var val=thisId.innerText;
+    var currentFollowers =parseInt(temp.innerText);
+    if (val === 'Follow') {
+        console.log("hereeeee");
+        console.log(idString);
+        currentFollowers +=1;
+        thisId.innerHTML = 'Following <i class="fas fa-user-times"></i>';
+    }
+else
+   {
+    currentFollowers -= 1;
+    thisId.innerHTML = 'Follow <i class="fas fa-user-plus"></i>';
+  }
+  temp.textContent =currentFollowers;
+}
+
+</script>
+{#    <script>#}
+{#        #}
+{#        const target=(count) = {#}
+{#        clicked: 0,#}
+{#        currentFollowers: count,#}
+{#        btn: document.querySelector("a.btn"),#}
+{#        fw: document.querySelector("span.followers")#}
+{#      };#}
+{#      #}
+{#      const follow = () => {#}
+{#        target(count).clicked += 1;#}
+{#        target(count).btn.innerHTML = 'Following <i class="fas fa-user-times"></i>';#}
+{#      #}
+{#        if (target(count).clicked % 2 === 0) {#}
+{#          target.currentFollowers -= 1;#}
+{#          target.btn.innerHTML = 'Follow <i class="fas fa-user-plus"></i>';#}
+{#        }#}
+{#        else {#}
+{#          target.currentFollowers += 1;#}
+{#        }#}
+{#      #}
+{#        target.fw.textContent = target.currentFollowers;#}
+{#        target.btn.classList.toggle("following");#}
+{#      }</script>#}
+</body>
+
+</html>

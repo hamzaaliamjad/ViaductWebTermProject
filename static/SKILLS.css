@@ -1,0 +1,240 @@
+.form-container {
+    border: 1px solid #ccc;
+    padding: 15px 10px;
+    border-radius: 2px;
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+    background: #f9f9f9;
+}
+
+.form-container .btn-primary {
+    background: #333;
+}
+.btn-warning{
+    background: #595959;
+    margin: 12px 12px;
+}
+
+.form-container .btn-primary:hover {
+    background-color: #000;
+}
+
+.form-container .btn-primary:focus,
+.form-container .btn-primary:active {
+    background-color: #000;
+    border: 1px solid #333;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    background: none;
+}
+
+.form-control.input-lg {
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+        border-radius: 2px;
+    font-size: 14px;
+}
+
+.form-control,
+.form-control.input-md {
+    border-radius: 0;
+}
+
+
+.field-error {
+    padding-top: 10px;
+    color: #a31600;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.is-error {
+    background-color: #fff0f0;
+    border: 1px solid #a31600;
+    font-size: 14px;
+}
+
+.is-error::-webkit-input-placeholder {
+    color: #a94442;
+}
+
+.is-error:-ms-input-placeholder {
+    color: #a94442;
+}
+
+.is-error::-ms-input-placeholder {
+    color: #a94442;
+}
+
+.is-error::placeholder {
+    color: #a94442;
+}
+
+.hiddenField {
+    display: none;
+}
+
+.skillset {
+    padding-top: 50px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #cecece
+}
+
+.skillset .btn {
+
+    width: 84px;
+}
+
+.skillset .btn:hover {
+    font-weight: bold;
+    -webkit-box-shadow: 2px 2px 5px #bdbdbd;
+        -ms-box-shadow: 2px 2px 5px #bdbdbd;
+            box-shadow: 2px 2px 5px #bdbdbd;
+}
+
+.skillset .btn:focus {
+    border: 0
+}
+
+.skills,
+.projects {
+    padding-bottom: 20px;
+}
+
+.add-skill {
+    margin-top: 28px;
+}
+
+.new-row {
+    padding-top: 2px;
+    padding-left: 10px;
+}
+
+.add-row .plus-icon {
+    font-size: 24px;
+    color: #002b55;
+    padding-top: 5px;
+}
+
+.skills,
+.projects {
+    margin-bottom: 20px;
+}
+
+.skills .panel-collapse,
+.projects .panel-collapse {
+    border: 1px solid #d6d6d6;
+    padding-bottom: 20px;
+    height: auto !important;
+}
+
+.row-new-added {
+    padding: 8px 0 0;
+}
+
+.button-addSkill {
+    background: #CB283C;
+    padding: 10px 15px;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.skill-container {
+    padding: 0;
+}
+
+.pannel-menu {
+    padding: 10px 20px 8px 20px;
+    background: #007796;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.add-skil-inner {
+    margin-top: 20px;
+}
+
+.add-skil-inner .add-skil-title {
+    padding: 35px 30px 30px 30px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-family: "MarkProMed", Arial, Helvetica;
+    text-transform: uppercase;
+    cursor: pointer;
+-webkit-transition: all .3s ease-out 0s;
+-ms-transition: all .3s ease-out 0s;
+  -o-transition: all .3s ease-out 0s;
+  transition: all .3s ease-out 0s;
+}
+
+.industry_badge_chip i {
+    padding: 4px 10px;
+}
+
+.industry_badge_chip {
+    display: inline-block;
+    padding: 5px 0 5px 10px;
+    border-radius: 3px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #002b55;
+}
+
+.industry_skill_text,
+.industry_subskill_text {
+    display: none;
+}
+
+.regional_skill_text,
+.regional_subskill_text {
+    display: none;
+}
+
+.soft-skill-hader {
+    padding: 20px 20px 20px 20px;
+    background: #007796;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.soft-skill-category {
+    border: 1px solid #d6d6d6;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.add-category{
+    margin-top: 10px;
+}
+.industry-knowledge,
+.regional-knowledge {
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.domain-basic-panel {
+    padding: 0;
+    margin-bottom: 15px;
+    padding: 10px 0 0 15px;
+    background: #007796;
+    color: #ffffff;
+}
+
+.add-industry,
+.add-regional {
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+.skill-container .add-skil-inner .pointer-disable{
+    cursor: default;
+}s

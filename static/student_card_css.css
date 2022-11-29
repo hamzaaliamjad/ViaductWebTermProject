@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css?family=Krub:400,700');
+html { overflow-y: scroll; overflow-x:hidden; }
+body
+{
+background-image:url("img.jpg");
+}
+.viaduct-logo{
+    font-family: 'Amita';
+    font-size: 23px;
+    color: #5d41e8;
+}
+.navbar-custom {
+    background-image: linear-gradient(
+        45deg,
+        hsl(0deg 0% 100%) 1%,
+        hsl(344deg 0% 95%) 33%,
+        hsl(344deg 0% 89%) 41%,
+        hsl(344deg 0% 84%) 46%,
+        hsl(344deg 0% 79%) 48%,
+        hsl(344deg 0% 74%) 50%,
+        hsl(344deg 0% 69%) 51%,
+        hsl(344deg 0% 64%) 51%,
+        hsl(344deg 0% 59%) 51%,
+        hsl(344deg 0% 54%) 51%,
+        hsl(344deg 0% 49%) 50%,
+        hsl(344deg 0% 44%) 50%,
+        hsl(344deg 0% 40%) 49%,
+        hsl(344deg 0% 35%) 49%,
+        hsl(344deg 0% 31%) 49%,
+        hsl(344deg 0% 26%) 49%,
+        hsl(344deg 0% 22%) 50%,
+        hsl(344deg 0% 18%) 52%,
+        hsl(344deg 0% 14%) 54%,
+        hsl(343deg 0% 10%) 59%,
+        hsl(343deg 0% 6%) 67%,
+        hsl(0deg 0% 0%) 99%
+      );
+      margin-bottom: 0px;
+}
+.img-border {
+    width:45px;
+    height:45px;
+    margin-right:16px;
+    border-radius:50%;
+    -o-object-fit:cover;
+    object-fit:cover;
+  }
+   .posts-container{
+    width:100%;
+    max-width:940px;
+    margin-right:auto;
+    margin-left:auto;
+   }
+   .posts-div
+   {
+    position: relative;
+    padding: 40px 30px;
+   }
+   .posts-grid
+   {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 30px;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+   }
+   
+   .card {
+    font-family: "Krub", sans-serif;
+    position: relative;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
+    background: #151515;
+    overflow: hidden;
+  }
+  .card .ds-top {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 300px;
+    height: 80px;
+    background: crimson;
+    animation: dsTop 1.5s;
+  }
+  .card .avatar-holder {
+    position: absolute;
+    margin: auto;
+    top: 40px;
+    right: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #151515, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000;
+    background: white;
+    overflow: hidden;
+    animation: mvTop 1.5s;
+  }
+  .card .avatar-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card .name {
+    position: absolute;
+    margin: auto;
+    top: -60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    height: 40px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+  }
+  .card .name a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .card .name a:hover {
+    text-decoration: underline;
+    color: crimson;
+  }
+  .card .name h6 {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    width: 40px;
+  }
+  .card .button {
+    position: absolute;
+    margin: auto;
+    padding: 8px;
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: inherit;
+    height: 40px;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+    outline: none;
+  }
+  .card .button a {
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: white;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    font-size: 10px;
+    transition: all 1s;
+  }
+  .card .button a:hover {
+    color: white;
+    background: crimson;
+  }
+  .card .ds-info {
+    position: absolute;
+    margin: auto;
+    top: 120px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: inherit;
+    height: 40px;
+    display: flex;
+  }
+  .card .ds-info .pens, .card .ds-info .projects, .card .ds-info .posts {
+    position: relative;
+    left: -300px;
+    width: calc(250px / 3);
+    text-align: center;
+    color: white;
+    animation: fadeInMove 2s;
+    animation-fill-mode: forwards;
+  }
+  .card .ds-info .pens h6, .card .ds-info .projects h6, .card .ds-info .posts h6 {
+    text-transform: uppercase;
+    color: crimson;
+  }
+  .card .ds-info .pens p, .card .ds-info .projects p, .card .ds-info .posts p {
+    font-size: 12px;
+  }
+  .card .ds-info .ds:nth-of-type(2) {
+    animation-delay: 0.5s;
+  }
+  .card .ds-info .ds:nth-of-type(1) {
+    animation-delay: 1s;
+  }
+  .card .ds-skill {
+    position: absolute;
+    margin: auto;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    width: 200px;
+    height: 100px;
+    animation: mvBottom 1.5s;
+  }
+  .card .ds-skill h6 {
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: crimson;
+  }
+  .card .ds-skill .skill h6 {
+    font-weight: 400;
+    font-size: 8px;
+    letter-spacing: 0.05em;
+    margin: 1px 0;
+    color: white;
+  }
+  .card .ds-skill .skill .fab {
+    color: crimson;
+    font-size: 14px;
+  }
+  .card .ds-skill .skill .bar {
+    height: 5px;
+    background: crimson;
+    text-align: right;
+  }
+  .card .ds-skill .skill .bar p {
+    color: white;
+    font-size: 8px;
+    padding-top: 5px;
+    animation: fadeIn 5s;
+  }
+  .card .ds-skill .skill .bar:hover {
+    background: white;
+  }
+  .card .ds-skill .skill .bar-html {
+    width: 95%;
+    animation: htmlSkill 1s;
+    animation-delay: 0.4s;
+  }
+  .card .ds-skill .skill .bar-css {
+    width: 90%;
+    animation: cssSkill 2s;
+    animation-delay: 0.4s;
+  }
+  .card .ds-skill .skill .bar-js {
+    width: 75%;
+    animation: jsSkill 3s;
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes fadeInMove {
+    0% {
+      opacity: 0;
+      left: -300px;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes htmlSkill {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 95%;
+    }
+  }
+  @keyframes cssSkill {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 90%;
+    }
+  }
+  @keyframes jsSkill {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 75%;
+    }
+  }
+  @keyframes mvBottom {
+    0% {
+      bottom: -150px;
+    }
+    100% {
+      bottom: 10px;
+    }
+  }
+  @keyframes mvTop {
+    0% {
+      top: -150px;
+    }
+    100% {
+      top: 40px;
+    }
+  }
+  @keyframes dsTop {
+    0% {
+      top: -150px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  .following {
+    color: white;
+    background: crimson;
+  }
+   .posts-grid{
+    -ms-grid-columns:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+   }
+   @media  screen and (max-width:991px) {
+    .posts-container{
+        max-width: 728px;
+    }
+    .posts-grid{
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+   }
+
+   @media  screen and (max-width:767px) {
+    .posts-div{
+        padding: 60px 15px;
+    }
+   }
+   @media  screen and (max-width:479px) {
+    .posts-container{
+        max-width: none;
+    }
+    .posts-heading{
+        margin-bottom: 24px;
+    }
+    .posts-grid{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+   }
+   #w-node-_5ab9c402-bb40-db71-5546-d2ade224e7b9-ab723c6b{
+    /*-ms-grid-column: span 1;*/
+    grid-column-start: span 1;
+    -ms-grid-column-span:1;
+    grid-column-end: span 1;
+    /*-ms-grid-row: span 1;*/
+    grid-row-start: span 1;
+    -ms-grid-row-span: 1;
+    grid-row-end: span 1;
+   }

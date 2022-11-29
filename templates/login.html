@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <form class="box" action="/loginHandle" method="post">
+        <div class="image">
+            <img src="/static/logo.png" class="Viaduct">
+        </div>
+        <input type="text" name="em" id="emailField" placeholder="rollnumber@pucit.edu.pk">
+        <input type="password" name="pwd" id="passwordField" placeholder="Password">
+        <div class="buttons">
+        <input type="submit" name="submitButton" id="submit" value="Login">
+        <button class="button" name="signup" id="signupButton" value="SignUp" onClick="location.href='/signupStudent'" disabled>SignUp</button>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Skills</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.3/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/static/SKILLS.css">
+</head>
+
+  <body>
+    <div class="container add-soft-skills-container">
+        <div class="soft-skills">
+            <h3 class="heading">Add Skills</h3>
+            <div class="add-soft-skills">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <ul class="breadcrumb">
+                        <li><a href="/editInfo" id="addSoftSkillsBreadcrumb">Edit Info</a></li>
+                        <li><a href="/addSkills">Add Skills</a></li>
+                    </ul>
+                    </div>
+                </div>
+                <form id="form">
+                <div class="row mb10 text-italic soft-skill-category">
+                    <div class="soft-skill-hader"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="row mb10">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-3 col-xs-12 col-sm-3 soft-skillset-dd">
+                                    <div class="col-md-5">
+                                        <label for="soft_category">Category</label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p>Technical Skills</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb10 text-italic soft-skill-row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-3 col-xs-12 col-sm-3">
+                                    <div class="col-md-5">
+                                        <label for="soft_skill">Skill</label>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <select name="soft_skill" class="form-control selectpicker" title="Skill"
+                                            data-width="120%" data-id="soft_skill">
+                                            <option>Python</option>
+                                            <option>C++</option>
+                                            <option>Java</option>
+                                            <option>JavaScript</option>
+                                            <option>Flask</option>
+                                            <option>Assembly</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-xs-12 col-sm-3 soft-subskill-dd">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <label for="soft_subskillset">Skill Level</label>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <select id="soft_subskillset" name="soft_subskillset" class="selectpicker form-control"
+                                                data-width="110%" title="Skill Level" data-id="soft_subskillset">
+                                                <option>10%</option>
+                                                <option>20%</option>
+                                                <option>30%</option>
+                                                <option>40%</option>
+                                                <option>50%</option>
+                                                <option>60%</option>
+                                                <option>70%</option>
+                                                <option>80%</option>
+                                                <option>90%</option>
+                                                <option>100%</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-xs-12 col-sm-3">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <label for="soft_subskill_year">Experience</label>
+                                        </div>
+                                        <div class="col-md-7 dropdown-border margin-mobile">
+                                            <select name="soft_subskill_year" id="soft_subskill_year" class="form-control selectpicker input-sm"
+                                                title="Year" data-width="100%" data-id="soft_subskill_year">
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-xs-12 col-sm-3 soft-skill-dd">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="soft_skill_intrest_level">Interest Level</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select id="soft_skill_intrest_level" name="soft_skill_intrest_level" class="selectpicker form-control" title="Interest Level" data-id="soft_skill_intrest_level">
+                                                <option>Not at all</option>
+                                                <option>Some what</option>
+                                                <option>Interested</option>
+                                                <option>Very Interested</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group text-right">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <button id="addSoftBtn"  class="btn btn-warning bg-dark text-light btn-sm add-soft add-anoter-softskill" type="button" data-id="addSoftBtn">Save to add next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Add Soft Skills End Hear -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/6b0b3e7b2e.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.3/js/bootstrap-select.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/3.0.3/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+  <script>
+ $(document).ready(function(){
+        // click on button submit
+        $("#addSoftBtn").on('click', function(){
+            // send ajax
+            var formdata = $("#form").serializeArray();
+            var data = {};
+            var flag=0
+            $(formdata ).each(function(index, obj){
+                data[obj.name] = obj.value;
+            });
+            data=JSON.stringify(data)
+            console.log(data)
+            $.ajax({
+                url: '/api/addSkills', // url where to submit the request
+                type : "POST", // type of action POST || GET
+                data : data, // post data || get data
+                dataType : 'json',
+                contentType: "application/json; charset=utf-8",
+                success : function(result) {
+                    console.log(result);
+                },
+                error: function(xhr, resp, text) {
+                    console.log(xhr, resp, text);
+                }
+            })
+        });
+    });
+  </script>
+    <script>
+$(document).ready(function () {
+    var clonedSoftSkillRow = $('.soft-skill-row').clone(true, true)
+   $('.add-anoter-softskill').on('click', function (e) {
+       if($(this).hasClass("add-soft")){
+           $(this).closest('.soft-skill-category').find('.soft-skill-row').last().after($(clonedSoftSkillRow).clone(true, true));
+           generateSoftSkillsRow('soft-skill-row', this);
+       }
+   });
+});
+
+$(document).on('click', '.remove-soft-skill-row',function (e) {
+   if($(this).closest(".row").hasClass("soft-skill-row")){
+       $(this).parent().remove();
+       var deletedRowId = $(this).parent().data('row');
+       reassignSoftSkillId('soft-skill-row');
+   }
+});
+
+function generateSoftSkillsRow(thisClass, thisVal) {
+    console.log(thisVal);
+   var rowCount = $(thisVal).closest(".soft-skill-category").find("."+thisClass).length;
+   $(thisVal).closest(".soft-skill-category").find("."+thisClass).each(function(i,v){
+       $(this).removeAttr('class').addClass('row mb10 text-italic '+thisClass+' '+thisClass+'-' + (i + 1));
+       $(this).attr('data-row',(i+1));
+   });
+   $(thisVal).closest(".soft-skill-category").find('.'+thisClass+':eq('+ (rowCount-1) +') .selectpicker').each(function (index, val) {
+       var selectId = $(val).attr('id');
+       selectId = selectId +'_'+ rowCount;
+       $(val).attr('id', selectId);
+   });
+
+   $(thisVal).closest(".soft-skill-category").find('.'+thisClass+':eq('+ (rowCount-1) +') .selectpicker').selectpicker();
+}
+
+function reassignSoftSkillId(thisVal){
+   var rowCount = $('.'+ thisVal).length;
+   console.log(rowCount);
+   $('.'+thisVal).each(function(index, val){
+       var self_id=index+1;
+       $(this).removeAttr('class').addClass('row mb10 text-italic '+thisVal+' '+thisVal+'-' + self_id);
+       $(this).attr('data-row', self_id);
+       $(val).children().each(function(index2, val2){
+           var id = $(val2).find('select').data('id');
+           id = id + '_' + self_id;
+           $(val2).find('select').attr('id', id).selectpicker('refresh');
+           $(val2).find('.bs-placeholder').data('id', id);
+       });
+   });
+}
+
+
+$(document).ready(function () {
+    var clonedSoftCategoryRow = $('.soft-skill-category').clone(true, true);
+   $('.add-anoter-value-cat').on('click', function (e) {
+    if($(this).hasClass("add-category")){
+        $(this).closest('.add-soft-skills').find('.soft-skill-category').last().after($(clonedSoftCategoryRow).clone(true, true));
+        generateSoftskillCategory('soft-skill-category');
+    }
+});
+});
+
+ function generateSoftskillCategory(thisVal) {
+    //alert(thisVal);
+    var rowCount = $('.'+thisVal).length;
+    $('.'+thisVal).each(function(i,v){
+        $(this).removeAttr('class').addClass('row mb10 text-italic '+thisVal+' '+thisVal+'-' + (i + 1));
+        $(this).attr('data-row',(i+1));
+    });
+    /* Adding dynamic id's to select picker based on row*/
+    $('.'+thisVal+':eq('+ (rowCount-1) +') .selectpicker').each(function (index, val) {
+        var selectId = $(val).attr('id');
+        selectId = selectId +'_'+ rowCount;
+        $(val).attr('id', selectId);
+    });
+    /* Initializing the select picker */
+    $('.'+thisVal+':eq('+ (rowCount-1) +') .selectpicker').selectpicker();
+ }
+
+ function reassignSoftIdCategory(thisVal){
+    var rowCount = $('.'+ thisVal).length;
+    console.log(rowCount);
+    $('.'+thisVal).each(function(index, val){
+        var self_id=index+1;
+        $(this).removeAttr('class').addClass('row mb10 text-italic '+thisVal+' '+thisVal+'-' + self_id);
+        $(this).attr('data-row', self_id);
+        $(val).children().each(function(index2, val2){
+            var id = $(val2).find('select').data('id');
+            id = id + '_' + self_id;
+            $(val2).find('select').attr('id', id).selectpicker('refresh');
+            $(val2).find('.bs-placeholder').data('id', id);
+        });
+    });
+ }
+  </script>
+
+  </body>
+</html>

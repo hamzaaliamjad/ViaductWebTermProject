@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Poppins',sans-serif;
+}
+body{
+    display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+    font-family:sans-serif;
+    background-image:url("img.jpg");
+
+    /*    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+background-image:url('bridge.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;*/
+}
+.box{
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image: linear-gradient(
+  35deg,
+  hsl(0deg 0% 0%) 0%,
+  hsl(343deg 0% 6%) 15%,
+  hsl(343deg 0% 10%) 29%,
+  hsl(344deg 0% 14%) 41%,
+  hsl(344deg 0% 18%) 50%,
+  hsl(344deg 0% 22%) 50%,
+  hsl(344deg 0% 26%) 50%,
+  hsl(344deg 0% 31%) 50%,
+  hsl(344deg 0% 35%) 49%,
+  hsl(344deg 0% 40%) 49%,
+  hsl(344deg 0% 44%) 48%,
+  hsl(344deg 0% 49%) 48%,
+  hsl(344deg 0% 54%) 48%,
+  hsl(344deg 0% 59%) 47%,
+  hsl(344deg 0% 64%) 48%,
+  hsl(344deg 0% 69%) 48%,
+  hsl(344deg 0% 74%) 49%,
+  hsl(344deg 0% 79%) 51%,
+  hsl(344deg 0% 84%) 54%,
+  hsl(344deg 0% 89%) 70%,
+  hsl(344deg 0% 95%) 85%,
+  hsl(0deg 0% 100%) 100%
+);
+    /*background-image: linear-gradient(
+        35deg,
+        hsl(0deg 0% 0%) 0%,
+        hsl(344deg 0% 12%) 15%,
+        hsl(344deg 0% 21%) 29%,
+        hsl(344deg 0% 31%) 41%,
+        hsl(344deg 0% 41%) 50%,
+        hsl(344deg 0% 52%) 50%,
+        hsl(344deg 0% 64%) 58%,
+        hsl(344deg 0% 75%) 70%,
+        hsl(344deg 0% 88%) 85%,
+        hsl(0deg 0% 100%) 100%
+      );*/
+      
+          text-align: center;
+    border-radius: 15px;
+}
+.Viaduct{
+  margin-left: calc(100% / 3 - 10px);
+  margin-right: auto;
+  width:calc(100% / 2 - 20px);
+  height: auto;
+  padding-right: 100px;
+  cursor: pointer;
+}
+.box input[type="text"],.box input[type="password"]{
+    margin-bottom: 15px;
+	width: calc(100% / 2 - 20px);
+    display: block;
+	font-weight: 500;
+	margin-bottom: 5px;
+	height: 45px;
+	width: 100%;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	padding-left: 15px;
+	font-size: 16px;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease;
+    /*border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;*/
+}
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+    border-color: #9b59b6;
+}
+.box .buttons{
+    display: inline-flex;
+} 
+.box input[type="submit"]
+{
+    height: 45px;
+	margin: 10px 0px;
+
+    height: 100%;
+	width:49%;
+    padding: 14px 50px;
+
+	outline: none;
+	color: #ffffff;
+	border:none;
+	font-size: 18px;
+	font-weight:500;
+	border-radius: 5px;
+	letter-spacing: 1px;
+    background-image: linear-gradient(
+  35deg,
+  hsl(272deg 88% 34%) 0%,
+  hsl(254deg 58% 45%) 15%,
+  hsl(235deg 54% 50%) 29%,
+  hsl(221deg 72% 47%) 41%,
+  hsl(211deg 100% 43%) 50%,
+  hsl(207deg 100% 44%) 50%,
+  hsl(204deg 100% 46%) 58%,
+  hsl(201deg 100% 47%) 70%,
+  hsl(198deg 100% 47%) 85%,
+  hsl(199deg 89% 58%) 100%
+);	/*background: linear-gradient(135deg, #71b7e6, #9b59b6);*/
+    cursor: pointer;
+    /*border: 0;
+    background: none;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid  #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;*/
+
+}
+.button{
+    height: 45px;
+	margin: 10px 0px;
+    margin-left: 12px;
+    height: 100%;
+	width:49%;
+    padding: 14px 40px;
+	outline: none;
+	color: #ffffff;
+	border:none;
+	font-size: 18px;
+	font-weight:500;
+	border-radius: 5px;
+	letter-spacing: 1px;
+    background-image: linear-gradient(
+  35deg,
+  hsl(272deg 88% 34%) 0%,
+  hsl(254deg 58% 45%) 15%,
+  hsl(235deg 54% 50%) 29%,
+  hsl(221deg 72% 47%) 41%,
+  hsl(211deg 100% 43%) 50%,
+  hsl(207deg 100% 44%) 50%,
+  hsl(204deg 100% 46%) 58%,
+  hsl(201deg 100% 47%) 70%,
+  hsl(198deg 100% 47%) 85%,
+  hsl(199deg 89% 58%) 100%
+);    cursor: pointer;
+    /*border: 0;
+    background: none;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 2px solid  #2ecc71;
+    padding: 14px 36px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;*/
+}
+.button:hover{
+    background-image: linear-gradient(
+        35deg,
+        hsl(199deg 89% 58%) 0%,
+        hsl(198deg 100% 47%) 15%,
+        hsl(201deg 100% 47%) 29%,
+        hsl(204deg 100% 46%) 41%,
+        hsl(207deg 100% 44%) 50%,
+        hsl(211deg 100% 43%) 50%,
+        hsl(221deg 72% 47%) 58%,
+        hsl(235deg 54% 50%) 70%,
+        hsl(254deg 58% 45%) 85%,
+        hsl(272deg 88% 34%) 100%
+      );}
+.box input[type ="submit"]:hover{
+    background-image: linear-gradient(
+        35deg,
+        hsl(199deg 89% 58%) 0%,
+        hsl(198deg 100% 47%) 15%,
+        hsl(201deg 100% 47%) 29%,
+        hsl(204deg 100% 46%) 41%,
+        hsl(207deg 100% 44%) 50%,
+        hsl(211deg 100% 43%) 50%,
+        hsl(221deg 72% 47%) 58%,
+        hsl(235deg 54% 50%) 70%,
+        hsl(254deg 58% 45%) 85%,
+        hsl(272deg 88% 34%) 100%
+      );}

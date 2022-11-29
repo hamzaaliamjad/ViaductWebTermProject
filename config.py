@@ -1,0 +1,5 @@
+DB_IP = 'localhost'
+DB_USER = 'root'
+DB_PASSWORD = 'hamza123'
+DATABASE = 'viaduct'
+SECRET_KEY='xyz123456yresp9'

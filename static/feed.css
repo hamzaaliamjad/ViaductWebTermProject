@@ -1,0 +1,164 @@
+html { overflow-y: scroll; overflow-x:hidden; }
+body
+{
+background-image:url("img.jpg");
+}
+.viaduct-logo{
+    font-family: 'Amita';
+    font-size: 23px;
+    color: #5d41e8;
+}
+.navbar-custom {
+    background-image: linear-gradient(
+        45deg,
+        hsl(0deg 0% 100%) 1%,
+        hsl(344deg 0% 95%) 33%,
+        hsl(344deg 0% 89%) 41%,
+        hsl(344deg 0% 84%) 46%,
+        hsl(344deg 0% 79%) 48%,
+        hsl(344deg 0% 74%) 50%,
+        hsl(344deg 0% 69%) 51%,
+        hsl(344deg 0% 64%) 51%,
+        hsl(344deg 0% 59%) 51%,
+        hsl(344deg 0% 54%) 51%,
+        hsl(344deg 0% 49%) 50%,
+        hsl(344deg 0% 44%) 50%,
+        hsl(344deg 0% 40%) 49%,
+        hsl(344deg 0% 35%) 49%,
+        hsl(344deg 0% 31%) 49%,
+        hsl(344deg 0% 26%) 49%,
+        hsl(344deg 0% 22%) 50%,
+        hsl(344deg 0% 18%) 52%,
+        hsl(344deg 0% 14%) 54%,
+        hsl(343deg 0% 10%) 59%,
+        hsl(343deg 0% 6%) 67%,
+        hsl(0deg 0% 0%) 99%
+      );
+      margin-bottom: 0px;
+}
+.img-border {
+    width:50px;
+    height:50px;
+    margin-right:16px;
+    border-radius:50%;
+    -o-object-fit:cover;
+    object-fit:cover;
+  }
+   .posts-container{
+    width:100%;
+    max-width:940px;
+    margin-right:auto;
+    margin-left:auto;
+   }
+   .posts-div
+   {
+    position: relative;
+    padding: 80px 30px;
+    border-bottom: 1px solid #e4ebf3;
+   }
+   .posts-heading
+   {
+    margin-bottom: 16px;
+    text-align: center;
+   }
+   .posts-grid
+   {
+    display: -ms-grid;
+    display: grid;
+    margin-top: 40px;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+   }
+   .margin-bottom-24px{
+    margin-bottom: 14px;
+   }
+   .posts-block
+   {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 32px 24px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction:column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-conten:space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+   
+   }
+   .posts-info{
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+     -webkit-align-items:center;
+    -ms-flex-align:center;
+    align-items:center;
+   }
+   .posts-profile-pic{
+    width:60px;
+    height:60px;
+    margin-right:16px;
+    border-radius:50%;
+    -o-object-fit:cover;
+    object-fit:cover;
+   }
+   .posts-roll
+   {
+    font-weight: 700;
+   }
+   .posts-title
+   {
+    margin-top:0px;
+   }
+   .posts-grid{
+    -ms-grid-columns:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+   }
+   @media  screen and (max-width:991px) {
+    .posts-container{
+        max-width: 728px;
+    }
+    .posts-grid{
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+   }
+
+   @media  screen and (max-width:767px) {
+    .posts-div{
+        padding: 60px 15px;
+    }
+   }
+   @media  screen and (max-width:479px) {
+    .posts-container{
+        max-width: none;
+    }
+    .posts-heading{
+        margin-bottom: 24px;
+    }
+    .posts-grid{
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    }
+   }
+   #w-node-_5ab9c402-bb40-db71-5546-d2ade224e7b9-ab723c6b{
+    /*-ms-grid-column: span 1;*/
+    grid-column-start: span 1;
+    -ms-grid-column-span:1;
+    grid-column-end: span 1;
+    /*-ms-grid-row: span 1;*/
+    grid-row-start: span 1;
+    -ms-grid-row-span: 1;
+    grid-row-end: span 1;
+   }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Feed Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Amita' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/feed.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom navbar-expand sticky-top ">
+        <div class="container-fluid">
+            <a class="navbar-brand viaduct-logo" href="#">Viaduct</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/feed">Feed</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href='/studentcards'>Students</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="#">Companies</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-dark text-decoration-underline text-white" aria-current="page" href="#">Make
+                        your cards STANDOUT</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-10 mb-2 mb-lg-0">
+                <li class="nav-item imageProfile">
+                    <div class="col-xs-1">
+                        <a href='/studentView'><img class="img-responsive img-border rounded-circle" src="../static/mypic.jpeg"
+                                alt="Profile Picture" width="42" height="42"></a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="posts-div wf-section">
+        <div class="posts-container">
+            <h2 class="posts-heading">Feed</h2>
+            <div class="posts-grid">
+                {%for i in range (0,count)%}
+                <div class="posts-block" id={{ i }} >
+                    <h3 class="posts-title">{{data[i][2]}} Update</h3>
+                    <p class="margin-bottom-24px"><span class="posts-text">{{ dataS[i][0] }} has started working at {{ data[i][1] }}.</span></p>
+                    <p>{{data[i][4]}}</p>
+                        <div class="posts-info"><img src="../static/mypic.jpeg" loading="lazy" alt=""
+                                                     class="posts-profile-pic">
+                            <div>
+                                <div class="posts-roll">{{ dataS[i][1] }}</div>
+                                <div class="posts-name">{{ dataS[i][0] }}</div>
+                            </div>
+                        </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
